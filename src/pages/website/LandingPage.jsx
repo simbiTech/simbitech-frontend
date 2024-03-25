@@ -1,13 +1,22 @@
 import React from 'react'
 import '../../styles/LandingPage.css'
+import NavBar from './Navbar.jsx';
+import HeroSection from './Hero.jsx';
 
 
-const LandingPage = () => {
-  return (
-    <div>
-      <h1>LandingPage</h1>
-    </div>
+export default function LandingPage () {
+  return(
+    <>
+      <Header />
+    </>
   );
 }
 
-export default LandingPage
+function Header() {
+  return (
+    <header>
+      <NavBar />
+      <HeroSection />
+    </header>
+  )
+}
