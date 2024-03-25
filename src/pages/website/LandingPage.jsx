@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../styles/LandingPage.css'
-import NavBar from './Navbar.jsx';
-import HeroSection from './Hero.jsx';
+import NavBar from './Components/Navbar.jsx';
+import HeroSection from './Components/Hero.jsx';
 
 
 export default function LandingPage () {
