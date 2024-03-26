@@ -18,10 +18,12 @@ html {
 }
 :root {
    --primary-color: #800080;
-   --white-color: #F5F3F6;
+   --milk-color: #F5F3F6;
    --base-color: #F9DBBD;
    --light-primary: #BF80BF;
+   --dark-primary: #400040;
    --black-color: #151415;
+   --white-color: #FFFFFF;
 
    /* gradient */
    --button-gradient: linear-gradient(to right, var(--base-color), var(--base-color),var(--primary-color));
@@ -39,7 +41,7 @@ header {
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center top;
-   color: var(--white-color);
+   color: var(--milk-color);
    padding: 3% 5%;
 }
 nav {
@@ -138,6 +140,98 @@ nav {
    border: 0.1px solid var(--white-color);
 }
 
+/* About section */
+.about {
+   padding: 4%;
+   background-color: var(--milk-color);
+}
+.backdrop {
+   background-color: var(--primary-color);
+   width: 100%;
+   border-radius: 0.4rem;
+   max-height: 620px;
+}
+.about-flex {
+   height: 100%;
+   position: relative;
+   border-radius: 0.4rem;
+   right: 2rem;
+   bottom: 2rem;
+   background-color: var(--white-color);
+   z-index: 1;
+   display: flex;
+   align-items: flex-start;
+}
+.about-flex > .why , .about-flex > .why-image{
+   flex-basis: 50%;
+   
+}
+.why {
+   padding: 3%;
+}
+.why > div {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   margin-bottom: 2rem;
+}
+.why-img {
+   width: 5rem;
+}
+.why-img > img {
+   width: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+.why  div h3 {
+   color: var(--black-color);
+   font-weight: 700;
+   font-size: 3rem;
+}
+.why  p {
+   color: var(--black-color);
+   font-size: clamp(1.8rem, 3vw, 2rem);
+   line-height: 3.5rem;
+   letter-spacing: 0.1rem;
+   font-weight: 500;
+}
+.why-image > img {
+   width: 100%;
+   object-fit: cover;
+   object-position: center;
+   border-radius: 0.4rem;
+}
+
+.boxes {
+   position: absolute;
+   bottom: 2%;
+   right: 1%;
+   left: 0;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1.4rem;
+}
+.box {
+   padding: 1.8rem;
+   border-radius: 0.3rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 800;
+   font-size: 3.5rem;
+}
+.box:first-child {
+   color: var(--milk-color);
+   background-color: var(--dark-primary);
+}
+.box:nth-child(2) {
+   color: var(--black-color);
+   background-color: var(--base-color);
+}
+.box:last-child {
+   background-color: var(--light-primary);
+   color: var(--milk-color);
+}
 
 /* styles for responsiveness */
 @media (max-width: 1230px) {
