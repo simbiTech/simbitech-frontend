@@ -1,6 +1,4 @@
-
-import about from "../../../assets/images/About.png";
-import office from "../../../assets/images/office women.png";
+import { about, office } from "../../assets";
 
 export default function About() {
   return(
