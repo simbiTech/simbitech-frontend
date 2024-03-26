@@ -42,6 +42,7 @@ module.exports = {
       backgroundImage: {
         "hero-bg": "url('/src/assets/images/hero-rectangle.svg')",
         "login-bg": "url('/src/assets/images/loginVector.svg')",
+        "login-bg1": "url('/src/assets/loginVector.png')",
         "settings-bg": "url('/src/assets/images/settingsbg.svg')",
       },
       boxShadow: {
