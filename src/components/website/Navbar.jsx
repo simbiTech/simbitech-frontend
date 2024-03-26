@@ -31,7 +31,7 @@ export default function NavBar() {
           <a href="">Sponsorship</a>
         </li>
         <Link to={"/login"}>
-          <li>
+          <li className='get-started-btn'>
             <a href="">Get Started</a>
           </li>
         </Link>

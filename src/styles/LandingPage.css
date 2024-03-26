@@ -84,12 +84,12 @@ nav {
 .nav-links > li:hover {
    background-color: var(--black-color);
 }
-.nav-links > li:last-child {
+.get-started-btn {
    border: 1px solid var(--base-color);
    font-weight: 700;
    padding: 1rem 2rem;
 }
-.nav-links > li:last-child:hover {
+.get-started-btn:hover {
    background: var(--button-gradient);
    border: none;
    color: var(--black-color);
@@ -150,8 +150,10 @@ nav {
    width: 100%;
    border-radius: 0.4rem;
    max-height: 620px;
+   
 }
 .about-flex {
+   min-height: 500px;
    height: 100%;
    position: relative;
    border-radius: 0.4rem;
@@ -166,6 +168,7 @@ nav {
    flex-basis: 50%;
    
 }
+
 .why {
    padding: 3%;
 }
@@ -186,15 +189,16 @@ nav {
 .why  div h3 {
    color: var(--black-color);
    font-weight: 700;
-   font-size: 3rem;
+   font-size: clamp(2.5rem, 2.5vw, 3.5rem);
 }
 .why  p {
    color: var(--black-color);
-   font-size: clamp(1.8rem, 3vw, 2rem);
+   font-size: clamp(1.6rem, 3vw, 2rem);
    line-height: 3.5rem;
    letter-spacing: 0.1rem;
    font-weight: 500;
 }
+
 .why-image > img {
    width: 100%;
    object-fit: cover;
@@ -212,13 +216,16 @@ nav {
    gap: 1.4rem;
 }
 .box {
-   padding: 1.8rem;
+   padding: 3%;
    border-radius: 0.3rem;
    display: flex;
    align-items: center;
    justify-content: center;
    font-weight: 800;
-   font-size: 3.5rem;
+   white-space: nowrap;
+   max-height: 95px;
+   font-size: clamp(1.8rem, 2.5vw, 4rem);
+   cursor: pointer;
 }
 .box:first-child {
    color: var(--milk-color);
@@ -280,12 +287,50 @@ nav {
    .hero {
       margin-top: 8rem;
    }
+
+   /* about section */
+   .about-flex {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+   }
+
+   .backdrop {
+      max-height: max-content;
+   }
+   .why-image {
+      margin-left: -3%;
+   }
+   .why-image > img {
+      border-radius: 0;
+   }
+  
+  
 }
 @media (max-width: 500px) {
    .hero {
       margin-top: 5rem;
       height: 80%;
    }
+   .why > div {
+      justify-content: center;
+   }
+   .about-flex {
+      text-align: center;
+   }
+   .boxes {
+      gap: 0.8rem;
+   }
+   .box {
+      white-space: wrap;
+   }
+   .why-img {
+      width: 4rem;
+   }
+   .about {
+      padding: 5% 2.5% 5% 5%;
+   }
+ 
   
 }
 @media (max-width: 380px) {
@@ -297,5 +342,55 @@ nav {
    }
    .hero p {
       font-size: 2rem;
+   }
+}
+
+@media (max-width: 1435px) {
+   .why {
+      padding: 2%;
+   }
+   .why > div {
+      margin-bottom: 0.8rem;
+   }
+   .boxes {
+      bottom: 1.2%;
+      right: 0.5%;
+      left: 0;
+   }
+   .box {
+      padding: 2.5%;
+   }
+   .why  p {
+      line-height: 3.2rem;
+      letter-spacing: 0.05rem;
+   }
+   .about-flex {
+      right: 1.3rem;
+      bottom: 1.3rem;
+   }
+}
+@media (max-width: 1149px) {
+
+   .about-flex > .why {
+      flex-basis: 60%;
+      
+   }
+   .about-flex > .why-image {
+      flex-basis: 40%;
+     
+   }
+   
+
+}
+@media (max-width: 657px) {
+   .why-image {
+      margin-left: 0;
+      padding: 1rem;
+   }
+}
+@media (max-width: 1435px) and (min-width: 957px) {
+   .why-image > img {
+      height: 100%;
+      min-height: 50rem;
    }
 }
