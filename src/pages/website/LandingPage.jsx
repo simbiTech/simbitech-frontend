@@ -1,13 +1,26 @@
-import React from 'react'
-import '../../styles/LandingPage.css'
+import React from "react";
+import "../../styles/LandingPage.css";
+import About from "../../components/website/About";
+import NavBar from "../../components/website/Navbar";
+import HeroSection from "../../components/website/Hero";
+import Service from "../../components/website/Services";
 
 
-const LandingPage = () => {
+export default function LandingPage() {
   return (
-    <div>
-      <h1>LandingPage</h1>
-    </div>
+    <>
+      <Header />
+      <About />
+      <Service />
+    </>
   );
 }
 
-export default LandingPage
+function Header() {
+  return (
+    <header>
+      <NavBar />
+      <HeroSection />
+    </header>
+  );
+}

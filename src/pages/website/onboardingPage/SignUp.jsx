@@ -25,14 +25,14 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="bg-[rgb(251,231,211)] flex items-center h-[100vh]">
+      <div className="bg-[rgb(251,231,211)] flex items-center h-[100%] md:h-[100vh]">
         <div className="bg-primarybase font-source-sans-pro flex gap-5 py-5">
-          <div className="flex flex-col w-[45%] py-3 gap-16">
+          <div className="hidden md:flex flex-col w-[45%] py-3 gap-16">
             <div>
               <div className="flex justify-end">
                 <img src={video} alt="" className="w-[100px]" />
               </div>
-              <div className=" flex items-center justify-center text-white gap-2 relative bottom-8 -mb-8">
+              <div className="flex items-center justify-center text-white gap-2 relative bottom-8 -mb-8">
                 <img src={brandlogo} alt="" className="bg-white rounded-full" />
                 <p className="text-bold text-4xl">SimbiTech</p>
               </div>
@@ -57,7 +57,7 @@ const SignUp = () => {
               <img src={Ebook} alt="" className="w-[104px] h-[112px]" />
             </div>
           </div>
-          <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[35%] h-full rounded-xl gap-5 p-10">
+          <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[90%] mx-auto md:mx-[unset] lg:w-[35%] h-[100%] md:h-full rounded-xl gap-5 p-5 md:p-10 ">
             <div className="flex flex-col justify-center text-center gap-2">
               <p className="font-bold text-2xl tracking-wide">
                 {" "}
@@ -137,7 +137,7 @@ const SignUp = () => {
               </div>
             </form>
           </div>
-          <div className="flex flex-col justify-between pl-5  py-11">
+          <div className="hidden md:flex flex-col justify-between pl-5  py-11">
             <img src={video} alt="" className="w-[100px]" />
             <img src={Ebook} alt="" className="w-[104px] h-[112px]" />
           </div>

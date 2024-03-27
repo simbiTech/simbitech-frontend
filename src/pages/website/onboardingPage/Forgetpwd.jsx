@@ -12,8 +12,8 @@ const Forgetpwd = () => {
   return (
     <>
       <div className="bg-login-bg1  bg-cover bg-center bg-no-repeat h-[100vh] font-source-sans-pro relative flex justify-center items-center">
-        <div className="bg-primarybase absolute w-full flex justify-center items-center opacity-70 inset-0"></div>
-        <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[35%] rounded-xl gap-10 p-10 relative">
+        <div className="bg-primarybase absolute w-full flex justify-center items-center opacity-80 inset-0"></div>
+        <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[unset] md:w-[35%] rounded-xl gap-10 p-10 relative">
           <div className="flex flex-col justify-center text-center gap-2">
             <p className="font-bold text-2xl tracking-wide">
               {" "}
