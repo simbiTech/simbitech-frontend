@@ -3,6 +3,7 @@ import "../../styles/LandingPage.css";
 import About from "../../components/website/About";
 import NavBar from "../../components/website/Navbar";
 import HeroSection from "../../components/website/Hero";
+import Service from "../../components/website/Services";
 
 
 export default function LandingPage() {
@@ -10,6 +11,7 @@ export default function LandingPage() {
     <>
       <Header />
       <About />
+      <Service />
     </>
   );
 }
