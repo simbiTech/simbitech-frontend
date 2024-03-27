@@ -54,6 +54,7 @@ export default function Service() {
 
 function RotatingCircle() {
   const text = ".WOMEN IN TECH.WOMEN IN TECH";
+  // to split each letters of the text
   const chars = text.split("");
 
  
@@ -62,6 +63,7 @@ function RotatingCircle() {
 
     useEffect(() => {
       const interval = setInterval(() => {
+      // loop throught the colors and change it at intervals, making sure it comes back to once the length of the array is exceeded
         setCurrentColor((prev) => (prev + 1) % colors.length);
       }, 2000);
 
@@ -73,6 +75,7 @@ function RotatingCircle() {
       <div className="circle">
         <div className="text">
           {chars.map((char, index) => (
+            // to rotate each characters inorder to form a circle
             <span key={index} style={{ transform: `rotate(${index * 12.9}deg)`, color:colors[currentColor]}}>{char}</span>
           ))}
         </div>
