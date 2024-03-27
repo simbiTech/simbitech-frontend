@@ -11,8 +11,8 @@ const EmailVerification = () => {
   });
   return (
     <>
-      <div className="flex justify-center items-center h-[100vh] font-source-sans-pro">
-        <div className="flex flex-col items-center gap-10 border-[1px] border-primarybase w-[50%] p-5">
+      <div className="flex justify-center items-center h-[100vh] font-source-sans-pro ">
+        <div className="flex flex-col items-center gap-10 border-[1px] border-primarybase w-[90%] lg:w-[50%] p-5">
           <div className="flex items-center gap-2">
             <img src={brandlogo} alt="" />
             <p className="font-bold text-[32px]">SimbiTech</p>
