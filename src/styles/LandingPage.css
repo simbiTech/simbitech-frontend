@@ -24,6 +24,8 @@ html {
    --dark-primary: #400040;
    --black-color: #151415;
    --white-color: #FFFFFF;
+   --dim-primary: #550055;
+
 
    /* gradient */
    --button-gradient: linear-gradient(to right, var(--base-color), var(--base-color),var(--primary-color));
@@ -33,6 +35,7 @@ html {
 }
 body {
    font-family: "Inter", sans-serif;
+   background-color: var(--milk-color);
 }
 
 header {
@@ -84,12 +87,12 @@ nav {
 .nav-links > li:hover {
    background-color: var(--black-color);
 }
-.nav-links > li:last-child {
+.get-started-btn {
    border: 1px solid var(--base-color);
    font-weight: 700;
    padding: 1rem 2rem;
 }
-.nav-links > li:last-child:hover {
+.get-started-btn:hover {
    background: var(--button-gradient);
    border: none;
    color: var(--black-color);
@@ -149,9 +152,10 @@ nav {
    background-color: var(--primary-color);
    width: 100%;
    border-radius: 0.4rem;
-   max-height: 620px;
+   max-height: 620px; 
 }
 .about-flex {
+   min-height: 500px;
    height: 100%;
    position: relative;
    border-radius: 0.4rem;
@@ -166,6 +170,7 @@ nav {
    flex-basis: 50%;
    
 }
+
 .why {
    padding: 3%;
 }
@@ -186,15 +191,16 @@ nav {
 .why  div h3 {
    color: var(--black-color);
    font-weight: 700;
-   font-size: 3rem;
+   font-size: clamp(2.5rem, 2.5vw, 3.5rem);
 }
 .why  p {
    color: var(--black-color);
-   font-size: clamp(1.8rem, 3vw, 2rem);
+   font-size: clamp(1.6rem, 3vw, 2rem);
    line-height: 3.5rem;
    letter-spacing: 0.1rem;
    font-weight: 500;
 }
+
 .why-image > img {
    width: 100%;
    object-fit: cover;
@@ -212,13 +218,16 @@ nav {
    gap: 1.4rem;
 }
 .box {
-   padding: 1.8rem;
+   padding: 3%;
    border-radius: 0.3rem;
    display: flex;
    align-items: center;
    justify-content: center;
    font-weight: 800;
-   font-size: 3.5rem;
+   white-space: nowrap;
+   max-height: 95px;
+   font-size: clamp(1.8rem, 2.5vw, 4rem);
+   cursor: pointer;
 }
 .box:first-child {
    color: var(--milk-color);
@@ -233,7 +242,204 @@ nav {
    color: var(--milk-color);
 }
 
+/* services section */
+
+.service {
+  background-color: var(--milk-color);
+  padding: 2% 4% 5%;
+  color: var(--black-color);
+}
+.service h3,
+.service h5 {
+  text-align: center;
+}
+.service h3 {
+   font-weight: 900;
+   font-size: clamp(2.5rem, 4vw, 4rem);
+   margin-bottom: 8rem;
+}
+.service h5 {
+   font-weight: 700;
+   font-size: clamp(2rem, 3vw, 2.5rem);
+}
+.service-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  row-gap: 8%;
+  column-gap: 8%;
+  position: relative;
+}
+.service-box {
+   /* position: relative; */
+   display: flex;
+   align-items: stretch;
+   border: 2px solid var(--primary-color);
+   border-radius: 1rem;
+}
+.service-img {
+   flex-basis: 30%;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-self: center;
+   border-radius: 1rem 0 0 1rem;
+}
+.service-box.right {
+   flex-direction: row-reverse;
+}
+.service-box.right .service-img {
+   border-radius: 0 1rem 1rem 0;
+}
+.service-img img {
+   padding: 10%;
+}
+.service-text {
+   flex-basis: 70%;
+   height: 100%;
+   padding: 2%;
+   border-bottom: 1rem solid var(--base-color);
+   border-radius: 0 0 1rem 0;
+}
+.service-box.right .service-text {
+   border-radius: 0 0 0 1rem;
+}
+.service-text p {
+   font-size: clamp(1.4rem, 1.1vw, 1.6rem);
+   margin: 0.5rem;
+   line-height: 3rem;
+   font-weight: 500;
+}
+/* rotating circle */
+/* to place the cicle in the center of the section */
+.circular {
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 50%;
+   top: 50%;
+}
+.circle {
+   position: relative;
+   width: 30rem;
+   height: 30rem;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.text {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   animation: anim 10s linear infinite;
+}
+.text span {
+   position: absolute;
+   left: 50%;
+   font-weight: 900;
+   font-size: 2.5rem;
+   transform-origin: 0 15rem;
+ }
+.inner-circle{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 70%;
+   width: 70%;
+   transform: translate(-50%, -50%);
+   left: 50%;
+   top: 50%;
+   border-radius: 50%;
+   position: absolute;
+   background-color: var(--light-primary);
+   }
+
+ .circle-texts {
+   position: relative;
+   background-color: var(--dim-primary);
+   width: 90%;
+   height: 90%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   color: var(--white-color);
+   font-weight: 600;
+   font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+ }
+
+ /* animation for the circle to rotate infinitely */
+ @keyframes anim {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+ }
+ .word {
+   display: inline-block;
+   opacity: 0;
+   transform: translate(-50%, -50%);
+   left: 50%;
+   top: 50%;
+   text-align: center;
+   position: absolute;
+   animation: changeWord 5s infinite;
+ }
+ .word:nth-last-child(2) {
+   animation-delay: 2.5s;
+ }
+
+ /* animation to change the words at intervals */
+ @keyframes changeWord {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+ }
+
+
 /* styles for responsiveness */
+
+@media (max-width: 1435px) {
+   .why {
+      padding: 2%;
+   }
+   .why > div {
+      margin-bottom: 0.8rem;
+   }
+   .boxes {
+      bottom: 1.2%;
+      right: 0.5%;
+      left: 0;
+   }
+   .box {
+      padding: 2.5%;
+   }
+   .why  p {
+      line-height: 3.2rem;
+      letter-spacing: 0.05rem;
+   }
+   .about-flex {
+      right: 1.3rem;
+      bottom: 1.3rem;
+   }
+}
+
+@media (max-width: 1435px) and (min-width: 957px) {
+   .why-image > img {
+      height: 100%;
+      min-height: 50rem;
+   }
+}
+
 @media (max-width: 1230px) {
    header {
       padding: 5% 4%;
@@ -245,9 +451,21 @@ nav {
       width: 6rem;
    }
 }
+
+@media (max-width: 1149px) {
+
+   .about-flex > .why {
+      flex-basis: 60%;
+      
+   }
+   .about-flex > .why-image {
+      flex-basis: 40%;
+     
+   }
+}
+
 @media (max-width: 957px) {
    .nav-icons {
-     
       display: initial;
       z-index: 1;
       cursor: pointer;
@@ -271,6 +489,7 @@ nav {
       transform: translateY(-100%);
       transition: transform 0.5s;
    }
+   /* to show the nvigation bar when the hamburger icon is clicked on */
    .nav-links.open {
       transform: none;
    }
@@ -280,14 +499,121 @@ nav {
    .hero {
       margin-top: 8rem;
    }
+
+   /* about section */
+   .about-flex {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+   }
+
+   .backdrop {
+      max-height: max-content;
+   }
+   .why-image {
+      margin-left: -3%;
+   }
+   .why-image > img {
+      border-radius: 0;
+   }
+  /* service section */
+  .service-boxes {
+   row-gap: 3%;
+   column-gap: 4%;
+  }
+  .service-box {
+   flex-direction: column;
+   gap: 1rem;
+  }
+  .service-box.right {
+   flex-direction: column;
 }
+.service-img, .service-box.right .service-img {
+   min-height: 200px;
+   border-radius: 1rem 1rem 0 0;
+}
+.service-box.right .service-text, .service-text {
+   border-radius: 0 0 1rem 1rem;
+   text-align: center;
+}
+.circle {
+   width: 20rem;
+   height: 20rem;
+}
+.text span {
+   font-weight: 700;
+   font-size: 1.9rem;
+   transform-origin: 0 10rem;
+ }
+}
+
+@media (max-width: 658px) {
+   .why-image {
+      margin-left: 0;
+      padding: 1rem;
+   }
+   .service h3 {
+      margin: 3rem 0;
+   }
+   .service-boxes {
+      grid-template-columns: 1fr;
+   }
+   .service-img img {
+      padding: 0;
+      margin: 0 auto;
+   }
+   .circular {
+      position: relative;
+      margin-left: 25%;
+      top: 5rem;
+   }
+   .circle {
+      width: 15rem;
+      height: 15rem;
+   }
+   .text span {
+      font-weight: 700;
+      font-size: 1.3rem;
+      transform-origin: 0 7.5rem;
+    }
+
+}
+
 @media (max-width: 500px) {
    .hero {
       margin-top: 5rem;
       height: 80%;
    }
-  
+   .why > div {
+      justify-content: center;
+   }
+   .about-flex {
+      text-align: center;
+   }
+   .boxes {
+      gap: 0.8rem;
+   }
+   .box {
+      white-space: wrap;
+   }
+   .why-img {
+      width: 4rem;
+   }
+   .about {
+      padding: 5% 2.5% 5% 5%;
+   }
+ 
+  /* services section */
+  .service-boxes {
+   row-gap: 1.5%;
+  }
+  .circular {
+   position: relative;
+   margin-right: -25%;
+   }
 }
+
+
 @media (max-width: 380px) {
    .hero h1 {
       font-size: 3.5rem;
@@ -299,3 +625,7 @@ nav {
       font-size: 2rem;
    }
 }
+
+
+
+
