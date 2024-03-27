@@ -2,6 +2,10 @@
   font-family: "source sans pro";
   src: url(/src/assets/source-sans-pro/SourceSansPro-Regular.ttf);
 }
+@font-face {
+  font-family: "sourcesans";
+  src: url(/src/assets/source-sans-pro/SourceSansPro-Light.ttf);
+}
 .ant-input{
   padding: 5px 0px !important;
   outline: none !important;
