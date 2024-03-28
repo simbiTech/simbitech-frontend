@@ -3,6 +3,7 @@ import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { logo } from '../../assets';
 import { Link } from 'react-router-dom';
 
+
 export default function NavBar() {
   const [showNav, setShowNav] = useState(false);
 
@@ -18,21 +19,23 @@ export default function NavBar() {
         <h3>SimbiTech</h3>
       </div>
       <ul className={`nav-links ${showNav ? "open" : ""} `}>
-        <li>
+        <li className='nav-link'>
           <a href="">Home</a>
         </li>
-        <li>
-          <a href="">About Us</a>
+        <Link to={"/about-us"}>
+        <li className='nav-link'>
+          About Us
         </li>
-        <li>
-          <a href="">Road Map</a>
+        </Link>
+        <li className='nav-link'>
+          Road Map
         </li>
-        <li>
-          <a href="">Sponsorship</a>
+        <li className='nav-link'>
+          Sponsorship
         </li>
         <Link to={"/login"}>
           <li className='get-started-btn'>
-            <a href="">Get Started</a>
+           Get Started
           </li>
         </Link>
       </ul>

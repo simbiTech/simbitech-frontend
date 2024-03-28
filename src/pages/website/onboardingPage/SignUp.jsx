@@ -25,7 +25,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="bg-[rgb(251,231,211)] flex items-center h-[100%] md:h-[100vh]">
+      <div className="bg-[rgb(251,231,211)] text-100 flex items-center h-[100%] md:h-[100vh]">
         <div className="bg-primarybase font-source-sans-pro flex gap-5 py-5">
           <div className="hidden md:flex flex-col w-[45%] py-3 gap-16">
             <div>

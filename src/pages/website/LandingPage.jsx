@@ -1,9 +1,10 @@
 import React from "react";
 import "../../styles/LandingPage.css";
 import About from "../../components/website/About";
-import NavBar from "../../components/website/Navbar";
-import HeroSection from "../../components/website/Hero";
+import Header from "../../components/website/Header";
 import Service from "../../components/website/Services";
+import SuccessStory from "../../components/website/Success";
+import Footer from "../../components/website/Footer";
 
 
 export default function LandingPage() {
@@ -12,15 +13,9 @@ export default function LandingPage() {
       <Header />
       <About />
       <Service />
+      <SuccessStory />
+      <Footer />
     </>
   );
 }
 
-function Header() {
-  return (
-    <header>
-      <NavBar />
-      <HeroSection />
-    </header>
-  );
-}

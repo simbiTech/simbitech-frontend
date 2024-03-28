@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
-    <div className="hero">
+    <div id="top" className="hero">
       <h1>
         Learn, Build and <span className="span-light">Lead</span> in Tech
       </h1>

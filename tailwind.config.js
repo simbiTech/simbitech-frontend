@@ -26,6 +26,9 @@ module.exports = {
         customBg: "rgba(230, 204, 230, 0.10)",
         icons: "#09121F",
       },
+      fontSize: {
+        '100': '100%',
+      },
       fontFamily: {
         source: ["Source Sans 3", "sans-serif"],
         "source-sans-pro": ["Source Sans Pro", "sans-serif"],
