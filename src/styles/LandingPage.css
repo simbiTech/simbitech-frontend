@@ -13,9 +13,9 @@
 a {
    color: inherit;
 }
-html {
+/* html {
    font-size: 62.5%;
-}
+} */
 :root {
    --primary-color: #800080;
    --milk-color: #F5F3F6;

@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Index.css";
-import { Button, Input, Space } from "antd";
+import { Input } from "antd";
 import { brandlogo, google, line } from "./Images";
 
 const LogIn = () => {
   return (
     <>
       <div className="bg-login-bg1  bg-cover bg-center bg-no-repeat h-[100vh] font-source-sans-pro relative flex justify-center items-center">
-        <div className="bg-primarybase absolute w-full flex justify-center items-center opacity-70 inset-0"></div>
-        <div className=" bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[35%] mx-auto rounded-xl px-10 py-5 gap-5 relative">
-          <div className="flex flex-col justify-center text-cente gap-7">
+        <div className="bg-[#800080] absolute w-full flex justify-center items-center opacity-85 inset-0"></div>
+        <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[unset] md:w-[90%] lg:w-[35%] mx-auto rounded-xl px-10 py-5 gap-5 relative">
+          <div className="flex flex-col justify-center text-cente gap-5">
             <div className="flex items-center gap-2 justify-center">
               <img src={brandlogo} alt="" className="w-[30px]" />
               <span className="font-bold text-xl"> SimbiTech</span>
@@ -20,56 +21,52 @@ const LogIn = () => {
                 Welcome back, let’s thrive today
               </p>
             </div>
-            <button className="flex items-center justify-center gap-3 bg-white w-full p-2 rounded-md border-[1px] border-primarybase border-opacity-[0.2]">
-              <img src={google} alt="" className="w-[20px]" />{" "}
-              <span className="text-[15px] font-normal opacity-[0.5]">
-                Continue with Google
-              </span>
-            </button>
-            <div className="flex items-center gap-3 opacity-[0.5]">
-              <img src={line} alt="" className="h-[1px] w-[50%]" />
-              <p>OR</p>
-              <img src={line} alt="" className="h-[1px] w-[50%]" />
+            <div className="flex flex-col gap-2">
+              <button className="flex items-center justify-center gap-3 bg-white w-full p-2 rounded-md border-[1px] border-primarybase border-opacity-[0.2]">
+                <img src={google} alt="" className="w-[20px]" />{" "}
+                <span className="text-[15px] font-normal opacity-[0.5]">
+                  Continue with Google
+                </span>
+              </button>
+              <div className="flex items-center gap-3 opacity-[0.5]">
+                <img src={line} alt="" className="h-[1px] w-[50%]" />
+                <p>OR</p>
+                <img src={line} alt="" className="h-[1px] w-[50%]" />
+              </div>
             </div>
           </div>
-          <form className="flex flex-col gap-7 ">
+          <form className="flex flex-col gap-3 ">
             <div className="flex flex-col gap-2">
               <label htmlFor="email">Email Address</label>
-
-              <Space direction="vertical">
-                <Input.Password
-                  placeholder="Enter your email address"
-                  type="email"
-                  required
-                  className=""
-                />
-              </Space>
+              <Input.Password
+                placeholder="Enter your email address"
+                type="email"
+                required
+                className=""
+              />
             </div>
             <div className="flex flex-col gap-1">
               <label htmlFor="pwd">Password</label>
-
-              <Space direction="vertical">
-                <Input.Password
-                  placeholder="Enter your password"
-                  type="password"
-                  name="password"
-                  required
-                />
-              </Space>
+              <Input.Password
+                placeholder="Enter your password"
+                type="password"
+                name="password"
+                required
+              />
             </div>
             <div className="flex justify-between">
               <div className="flex gap-2">
                 <input
                   type="checkbox"
                   id="checkbox"
-                  className=""
+                  className="accent-primarybase"
                 />
                 <label htmlFor="checkbox">Remember me</label>
               </div>
               <p>
-                <a href="">
-                  <span className="text-primarybase">Forget password?</span>
-                </a>
+               <Link to='/forgetpwd'> <span className="text-primarybase underline">
+                  Forget password?
+                </span></Link>
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -83,7 +80,9 @@ const LogIn = () => {
               <p>
                 Don't have an account?{" "}
                 <a href="">
-                  <span className="text-primarybase">sign up</span>
+                  <Link to="/signup">
+                    <span className="text-primarybase">sign up</span>
+                  </Link>
                 </a>
               </p>
             </div>
