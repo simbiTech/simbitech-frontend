@@ -1,10 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
 import { Input } from "antd";
 import { brandlogo, google, line } from "./Images";
 
 const LogIn = () => {
+  const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      navigate("/verify");
+    };
   return (
     <>
       <div className="bg-login-bg1  bg-cover bg-center bg-no-repeat h-[100vh] font-source-sans-pro relative flex justify-center items-center">
@@ -31,7 +37,7 @@ const LogIn = () => {
               <img src={line} alt="" className="h-[1px] w-[50%]" />
             </div>
           </div>
-          <form className="flex flex-col gap-6 ">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 ">
             <div className="flex flex-col gap-2">
               <label htmlFor="email">Email Address</label>
               <Input.Password
@@ -60,7 +66,7 @@ const LogIn = () => {
                 <label htmlFor="checkbox">Remember me</label>
               </div>
               <p>
-                <Link to="/forgetpwd">
+                <Link to="/forgot-password">
                   {" "}
                   <span className="text-primarybase underline">
                     Forget password?
