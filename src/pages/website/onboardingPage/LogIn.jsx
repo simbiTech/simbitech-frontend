@@ -7,10 +7,10 @@ import { brandlogo, google, line } from "./Images";
 const LogIn = () => {
   const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      navigate("/verify");
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate("/verify");
+  };
   return (
     <>
       <div className="bg-login-bg1  bg-cover bg-center bg-no-repeat h-[100vh] font-source-sans-pro relative flex justify-center items-center">
