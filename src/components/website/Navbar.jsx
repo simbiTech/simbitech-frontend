@@ -3,6 +3,7 @@ import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { logo } from '../../assets';
 import { Link } from 'react-router-dom';
 
+
 export default function NavBar() {
   const [showNav, setShowNav] = useState(false);
 
@@ -22,7 +23,9 @@ export default function NavBar() {
           <a href="">Home</a>
         </li>
         <li>
+        <Link to={"/about-us"}>
           <a href="">About Us</a>
+        </Link>
         </li>
         <li>
           <a href="">Road Map</a>

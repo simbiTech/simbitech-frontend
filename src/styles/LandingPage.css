@@ -27,6 +27,10 @@ html {
    --dim-primary: #550055;
    --dark-bg: #1A001A;
    --grey-color: #8A898A;
+   --light-grey: #D0D0D0;
+   --placeholder-color: #636263;
+   --secondary-color: #FBE7D3;
+   --social-bg: #e0c5aa;
 
 
    /* gradient */
@@ -38,6 +42,7 @@ html {
 body {
    font-family: "Inter", sans-serif;
    background-color: var(--milk-color);
+   ;
 }
 
 header {
@@ -523,6 +528,144 @@ nav {
    margin-top: 5rem;
 }
 
+
+/* footer */
+footer {
+   padding: 0 4% 4% ;
+   background-color: var(--milk-color);
+}
+.footer-nav {
+   background-color: var(--secondary-color);
+   padding: 2rem;
+   display: flex;
+   align-items: center;
+   gap: 3rem;
+}
+.footer-nav > li {
+   color: var(--black-color);
+   font-weight: 800;
+   font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+}
+.info {
+   background-color: var(--base-color);
+   padding: 4rem 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   column-gap: 2rem;
+   flex-wrap: wrap;
+   row-gap: 5rem;
+}
+.updates {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 3rem;
+}
+.updates p {
+   font-size: 1.6rem;
+   font-weight: 600;
+   text-align: center;
+}
+.email {
+   border-radius: 5rem;
+   display: flex;
+   align-items: stretch;
+   border: 2px solid var(--primary-color);
+   
+}
+.email > input {
+   flex: 1;
+   background-color: transparent;
+   padding: 1.5rem;
+}
+.email input::placeholder {
+   font-size: 1.8rem;
+   color: var(--placeholder-color);
+   text-align: center;
+}
+.email button {
+   font-size: 1.6rem;
+   color: var(--milk-color);
+   background-color: var(--primary-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 1.5rem 2rem;
+   border-top-right-radius: 5rem;
+   border-bottom-right-radius: 5rem;
+}
+.contacts {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+.social-media {
+   display: flex;
+   gap: 1rem;
+}
+.social-media div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--social-bg);
+   padding: 1rem;
+}
+.social-media div a {
+   font-size: 3rem;
+}
+.contacts h4 {
+   text-align: center;
+   font-weight: 800;
+   font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.call {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 1.4rem;
+}
+.footer-main {
+   padding: 3rem 2rem 10rem;
+   background-color: var(--primary-color);
+}
+.footer-logo {
+   margin-bottom: 5rem;
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+}
+.footer-img {
+   width: 6rem;
+}
+.footer-img img {
+   width: 100%;
+}
+.footer-info {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+.footer-info span {
+   color: var(--light-grey);
+   font-size: 1.6rem;
+}
+.footer-info p{
+   color: var(--milk-color);
+   font-weight: 600;
+   font-size: 1.6rem;
+}
+.footer-links {
+   display: grid;
+   row-gap: 2rem;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   place-items: center;
+}
+.footer-links li {
+   color: var(--light-grey);
+   text-decoration: underline;
+   font-size: 1.6rem;
+}
 /* styles for responsiveness */
 
 @media (max-width: 1435px) {
@@ -694,6 +837,9 @@ nav {
    bottom: -3rem;
    left: -40%;
 }
+.info {
+   justify-content: center;
+}
 }
 
 @media (max-width: 760px) {
@@ -750,6 +896,12 @@ nav {
       margin-top: 2rem;
    }
 
+   .footer-nav {
+      padding: 1rem;
+      gap: 1.5rem;
+      white-space: nowrap;
+   }
+
 }
 
 @media (max-width: 500px) {
@@ -791,7 +943,7 @@ nav {
    }
    .poly2 {
       bottom: 10%;
-      left: 5%;
+      left: -10%;
    }
    .poly1 {
       left: 80%;
