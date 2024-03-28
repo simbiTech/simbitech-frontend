@@ -7,7 +7,7 @@ import { brandlogo, google, line } from "./Images";
 const LogIn = () => {
   return (
     <>
-      <div className="bg-login-bg1  bg-cover bg-center bg-no-repeat h-[100vh] font-source-sans-pro relative flex justify-center items-center">
+      <div className="bg-login-bg1 text-100  bg-cover bg-center bg-no-repeat h-[100vh] font-source-sans-pro relative flex justify-center items-center">
         <div className="bg-[#800080] absolute w-full flex justify-center items-center opacity-85 inset-0"></div>
         <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[unset] md:w-[90%] lg:w-[35%] mx-auto rounded-xl px-10 py-5 gap-5 relative">
           <div className="flex flex-col justify-center text-cente gap-5">

@@ -4,7 +4,7 @@ import "../../styles/AboutUs.css";
 export default function AboutUs() {
   return(
     <div className="about-us">
-      who is that
+      <h1>who is that</h1>
     </div>
   );
 }
