@@ -19,23 +19,23 @@ export default function NavBar() {
         <h3>SimbiTech</h3>
       </div>
       <ul className={`nav-links ${showNav ? "open" : ""} `}>
-        <li>
+        <li className='nav-link'>
           <a href="">Home</a>
         </li>
-        <li>
         <Link to={"/about-us"}>
-          <a href="">About Us</a>
+        <li className='nav-link'>
+          About Us
+        </li>
         </Link>
+        <li className='nav-link'>
+          Road Map
         </li>
-        <li>
-          <a href="">Road Map</a>
-        </li>
-        <li>
-          <a href="">Sponsorship</a>
+        <li className='nav-link'>
+          Sponsorship
         </li>
         <Link to={"/login"}>
           <li className='get-started-btn'>
-            <a href="">Get Started</a>
+           Get Started
           </li>
         </Link>
       </ul>
