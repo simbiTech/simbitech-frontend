@@ -1,13 +1,59 @@
-import React from "react";
+import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "./Index.css";
-import { Input } from "antd";
+import { Input, message } from "antd";
 
 const Forgetpwd = () => {
   const navigate = useNavigate();
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [passwordError, setPasswordError] = useState("");
 
-  const validateForm = (e) => {
-    navigate("/login");
+  const [passwords, setPasswords] = useState({
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setPasswords({
+      ...passwords,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { password, confirmPassword } = passwords;
+    if (password !== confirmPassword) {
+      setPasswordsMatch(false);
+      message.error("Passwords did not match!");
+      return;
+    }
+    const regexNumber = /[0-9]/;
+    const regexLowercase = /[a-z]/;
+    const regexUppercase = /[A-Z]/;
+    const regexSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+    const isNumberValid = regexNumber.test(password);
+    const isLowerCaseValid = regexLowercase.test(password);
+    const isUpperCaseValid = regexUppercase.test(password);
+    const isSpecialCharValid = regexSpecialChar.test(password);
+    const isLengthValid = password.length >= 12;
+
+    if (
+      !isNumberValid||
+      !isLowerCaseValid ||
+      !isUpperCaseValid ||
+      !isSpecialCharValid ||
+      !isLengthValid
+    ) {
+      setPasswordError(
+        "Password must have at least one lowercase, one uppercase, one number one special character, and be at least 12 characters long."
+      );
+      return;
+    }
+    message.success('Account created successfully, verify your Email to continue');
+    localStorage.setItem("email", email.value);
+    navigate("/verify");
   };
   return (
     <>
@@ -23,14 +69,17 @@ const Forgetpwd = () => {
               Fill in your details to Reset your password.
             </p>
           </div>
-          <form onSubmit={validateForm} className="flex flex-col gap-5">
-            <div className="flex flex-col gap-2">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
               <label htmlFor="email">Email Address</label>
               <input
                 type="email"
                 placeholder="Enter your email address"
                 name="email"
                 id="email"
+                title="Enter the email you used to register"
+                value={passwords.email}
+                onChange={handleChange}
                 required
                 className="flex p-2 rounded-md border-[1px] border-primarybase border-opacity-[0.2] outline-none"
               />
@@ -41,7 +90,10 @@ const Forgetpwd = () => {
                 placeholder="New password"
                 type="password"
                 id="Password"
-                name="pwd"
+                name="password"
+                title="Password must have lowercase,uppercase, number special character, and must be 12 characters"
+                value={passwords.password}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -50,18 +102,24 @@ const Forgetpwd = () => {
               <Input.Password
                 placeholder="Confirm password"
                 type="password"
-                name="confirmpwd"
+                name="confirmPassword"
                 id="newPassword"
+                title="Confirm your password"
+                value={passwords.confirmPassword}
+                onChange={handleChange}
                 required
               />
             </div>
 
             <div className="flex flex-col gap-3">
-              {/* {error && <p className="text-[red]">{error}</p>} */}
+              {passwordError && (
+                  <p style={{ color: "red" }}>{passwordError}</p>
+                )}
               <button
                 type="submit"
                 name="submit"
                 id="submit"
+                title="Click to Reset your password"
                 className="bg-[#FBE7D3] after:flex rounded-sm text-center w-full py-2"
               >
                 Reset Password

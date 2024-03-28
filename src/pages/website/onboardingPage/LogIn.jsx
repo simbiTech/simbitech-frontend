@@ -9,7 +9,7 @@ const LogIn = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate("/verify");
+    navigate("/");
   };
   return (
     <>
@@ -25,7 +25,7 @@ const LogIn = () => {
               <p className="font-bold text-[32px]">Log In</p>
               <p className="font-normal">Welcome back, let’s thrive today</p>
             </div>
-            <button className="flex items-center justify-center gap-3 bg-white w-full p-3 rounded-md border-[1px] border-primarybase border-opacity-[0.2]">
+            <button className="flex items-center justify-center gap-3 bg-white w-full p-3 rounded-md border-[1px] border-primarybase border-opacity-[0.2]" title="Click to register with your google account">
               <img src={google} alt="" className="w-[20px]" />{" "}
               <span className="text-[15px] font-normal opacity-[0.5]">
                 Continue with Google
@@ -40,11 +40,13 @@ const LogIn = () => {
           <form onSubmit={handleSubmit} className="flex flex-col gap-6 ">
             <div className="flex flex-col gap-2">
               <label htmlFor="email">Email Address</label>
-              <Input.Password
-                placeholder="Enter your email address"
+              <input
                 type="email"
+                placeholder="Enter your email address"
+                name="email"
+                title="Enter the email you used to register"
                 required
-                className=""
+                className="flex p-3 border-[1px] border-primarybase border-opacity-[0.2] rounded-md placeholder:text-[14px] placeholder:opacity-[0.5]"
               />
             </div>
             <div className="flex flex-col gap-1">
@@ -53,6 +55,7 @@ const LogIn = () => {
                 placeholder="Enter your password"
                 type="password"
                 name="password"
+                title="Enter your correct passord"
                 required
               />
             </div>
@@ -61,6 +64,7 @@ const LogIn = () => {
                 <input
                   type="checkbox"
                   id="checkbox"
+                  title="Check to continue"
                   className="accent-primarybase"
                 />
                 <label htmlFor="checkbox">Remember me</label>
@@ -78,6 +82,7 @@ const LogIn = () => {
               <button
                 type="submit"
                 name="submit"
+                title="Click to login to your dasboard"
                 className="bg-[#FBE7D3] after:flex rounded-sm text-center w-full py-2 font-bold"
               >
                 Log In
