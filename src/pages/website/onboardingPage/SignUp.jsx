@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
-import { Input} from "antd";
+import { Input } from "antd";
 import { Ebook, brandlogo, video } from "./Images";
 
 const SignUp = () => {
@@ -10,7 +10,7 @@ const SignUp = () => {
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
-    setValue(event.target.value)
+    setValue(event.target.value);
   };
 
   const validateForm = (e) => {
@@ -25,8 +25,8 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="bg-[rgb(251,231,211)] text-100 flex items-center h-[100%] md:h-[100vh]">
-        <div className="bg-primarybase font-source-sans-pro flex gap-5 py-5">
+      <div className="bg-[rgb(251,231,211)] flex items-center h-screen md:h-[100vh] text-[16px]">
+        <div className="bg-primarybase font-source-sans-pro flex gap-5 py-5 w-full">
           <div className="hidden md:flex flex-col w-[45%] py-3 gap-16">
             <div>
               <div className="flex justify-end">
@@ -34,7 +34,7 @@ const SignUp = () => {
               </div>
               <div className="flex items-center justify-center text-white gap-2 relative bottom-8 -mb-8">
                 <img src={brandlogo} alt="" className="bg-white rounded-full" />
-                <p className="text-bold text-4xl">SimbiTech</p>
+                <p className="text-bold text-[40px]">SimbiTech</p>
               </div>
             </div>
             <div
@@ -57,13 +57,12 @@ const SignUp = () => {
               <img src={Ebook} alt="" className="w-[104px] h-[112px]" />
             </div>
           </div>
-          <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[90%] mx-auto md:mx-[unset] lg:w-[35%] h-[100%] md:h-full rounded-xl gap-5 p-5 md:p-10 ">
+          <div className="flex flex-col bg-greybase border-[4px] border-b-[#F9DBBD] border-r-[#F9DBBD] w-[100%] mx-auto md:mx-[unset] lg:w-[35%] h-full rounded-xl gap-10 p-5 md:p-10">
             <div className="flex flex-col justify-center text-center gap-2">
-              <p className="font-bold text-2xl tracking-wide">
-                {" "}
+              <p className="font-bold text-[32px]">
                 Sign Up to Create an Account
               </p>
-              <p className="text-[13px]">
+              <p>
                 Fill in your details to start your career as a woman in Tech.
               </p>
             </div>
@@ -100,15 +99,15 @@ const SignUp = () => {
                   required
                 />
               </div>
-              <div className="flex text-[14px] gap-2">
+              <div className="flex gap-2">
                 <input
                   type="checkbox"
                   id="checkbox"
                   onClick={handleMassageChange}
                   required
-                  className="relative bottom-2 accent-primarybase border-primarybase"
+                  className="relative bottom-4 accent-primarybase border-primarybase"
                 />
-                <p className="leading-tight">
+                <p className="leading-tight text-[15px]">
                   By creating an account you agree to the{" "}
                   <span className="text-primarybase">Terms of Use</span> and our{" "}
                   <span className="text-primarybase">
@@ -119,9 +118,9 @@ const SignUp = () => {
               <div className="flex flex-col gap-3">
                 {/* {error && <p className="text-[red]">{error}</p>} */}
                 <button
-                type="submit"
-                name="submit"
-                id="submit"
+                  type="submit"
+                  name="submit"
+                  id="submit"
                   className="bg-[#FBE7D3] after:flex rounded-sm text-center w-full py-2"
                 >
                   Create account
@@ -137,7 +136,7 @@ const SignUp = () => {
               </div>
             </form>
           </div>
-          <div className="hidden md:flex flex-col justify-between pl-5  py-11">
+          <div className="hidden md:flex flex-col justify-between py-11 mx-auto">
             <img src={video} alt="" className="w-[100px]" />
             <img src={Ebook} alt="" className="w-[104px] h-[112px]" />
           </div>
