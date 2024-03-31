@@ -1,26 +1,64 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
-import { Input } from "antd";
+import { Input, message } from "antd";
 import { Ebook, brandlogo, video } from "./Images";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const [message, setMassage] = useState(true);
-  const [value, setValue] = useState("");
+  const [messages, setMassages] = useState(true);
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [passwordError, setPasswordError] = useState("");
 
+  const [passwords, setPasswords] = useState({
+    password: "",
+    confirmPassword: "",
+  });
   const handleChange = (event) => {
-    setValue(event.target.value);
+    const { name, value } = event.target;
+    setPasswords({
+      ...passwords,
+      [name]: value,
+    });
   };
 
-  const validateForm = (e) => {
-    localStorage.setItem("email", value);
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { password, confirmPassword } = passwords;
+    if (password !== confirmPassword) {
+      setPasswordsMatch(false);
+      message.error("Passwords did not match!");
+      return;
+    }
+    const regexNumber = /[0-9]/;
+    const regexLowercase = /[a-z]/;
+    const regexUppercase = /[A-Z]/;
+    const regexSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+    const isNumberValid = regexNumber.test(password);
+    const isLowerCaseValid = regexLowercase.test(password);
+    const isUpperCaseValid = regexUppercase.test(password);
+    const isSpecialCharValid = regexSpecialChar.test(password);
+    const isLengthValid = password.length >= 12;
+
+    if (
+      !isNumberValid||
+      !isLowerCaseValid ||
+      !isUpperCaseValid ||
+      !isSpecialCharValid ||
+      !isLengthValid
+    ) {
+      setPasswordError(
+        "Password must have at least one lowercase, one uppercase, one number one special character, and be at least 12 characters long."
+      );
+      return;
+    }
+    message.success('Account created successfully, verify your Email to continue');
+    localStorage.setItem("email", email.value);
     navigate("/verify");
   };
 
   const handleMassageChange = () => {
-    setMassage(!message);
+    setMassages(!messages);
   };
 
   return (
@@ -41,7 +79,7 @@ const SignUp = () => {
               className="text-white italic text-[32px] w-[573px] text-center leading-tight font-normal"
               style={{ fontFamily: "sourcesans" }}
             >
-              {message ? (
+              {messages ? (
                 <p>
                   "Unlock your tech potential and pave your own digital future
                   with Simbitech – Empowering Women in Tech!"
@@ -66,7 +104,7 @@ const SignUp = () => {
                 Fill in your details to start your career as a woman in Tech.
               </p>
             </div>
-            <form onSubmit={validateForm} className="flex flex-col gap-3">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <div className="flex flex-col gap-2">
                 <label htmlFor="email">Email Address</label>
                 <input
@@ -74,9 +112,10 @@ const SignUp = () => {
                   placeholder="Enter your email address"
                   name="email"
                   id="email"
-                  value={value}
+                  title="Enter your Email to continue"
+                  value={passwords.email}
                   onChange={handleChange}
-                  className="flex p-2 rounded-md border-[1px] border-primarybase border-opacity-[0.2] outline-none"
+                  className="flex p-3 rounded-md border-[1px] border-primarybase border-opacity-[0.2] outline-none"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -85,7 +124,10 @@ const SignUp = () => {
                   placeholder="Create password"
                   type="password"
                   id="Password"
-                  name="pwd"
+                  name="password"
+                  title="Password must have lowercase,uppercase, number special character, and must be 12 characters"
+                  value={passwords.password}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -94,8 +136,11 @@ const SignUp = () => {
                 <Input.Password
                   placeholder="Re-enter password"
                   type="password"
-                  name="confirmpwd"
                   id="newPassword"
+                  name="confirmPassword"
+                  title="Confirm your Password"
+                  value={passwords.confirmPassword}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -103,6 +148,7 @@ const SignUp = () => {
                 <input
                   type="checkbox"
                   id="checkbox"
+                  title="Click to accept our T&C"
                   onClick={handleMassageChange}
                   required
                   className="relative bottom-4 accent-primarybase border-primarybase"
@@ -116,11 +162,14 @@ const SignUp = () => {
                 </p>
               </div>
               <div className="flex flex-col gap-3">
-                {/* {error && <p className="text-[red]">{error}</p>} */}
+                {passwordError && (
+                  <p style={{ color: "red" }}>{passwordError}</p>
+                )}
                 <button
                   type="submit"
                   name="submit"
                   id="submit"
+                  title="Click to Register"
                   className="bg-[#FBE7D3] after:flex rounded-sm text-center w-full py-2"
                 >
                   Create account
